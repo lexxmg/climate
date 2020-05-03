@@ -14,7 +14,7 @@
 	position: relative;
 
 	width: 100%;
-	height: 500px;
+	height: 700px;
 
 	margin-top: 50px;
 
@@ -26,8 +26,8 @@
 
 .graph__point {
 	position: absolute;
-	top: 100px;
-	left: 300px;
+	top: 0;
+	left: 0;
 
 	width: 10px;
 	height: 10px;
