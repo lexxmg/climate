@@ -1,0 +1,38 @@
+.main {
+
+}
+
+.main__container {
+
+}
+
+.main__graph {
+	
+}
+
+.graph {
+	position: relative;
+
+	width: 100%;
+	height: 500px;
+
+	margin-top: 50px;
+
+	background-image: url(../img/unnamed.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.graph__point {
+	position: absolute;
+	top: 100px;
+	left: 300px;
+
+	width: 10px;
+	height: 10px;
+
+	background-color: red;
+
+	border-radius: 50%
+}
