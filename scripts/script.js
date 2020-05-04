@@ -8,11 +8,16 @@ $(function(){
 	console.log(graphWidth);
 	console.log(graphHeight);
 
+	function map(x, in_min, in_max, out_min, out_max){
+  	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+	}
+
 	point.css(
 		{
-			top: 300,
-			left: graphWidth / 2 - 25 
+			top: map(40, 0, 100, 638, 5),
+			left: map(22.6, 12, 28, 120, 626) 
 		}
 	);
-	console.log(point.position());
+	
+	$.get();
 });
