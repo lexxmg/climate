@@ -38,3 +38,42 @@
 
 	border-radius: 50%
 }
+
+.graph__inner {
+	display: none;
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+
+	font-size: 22px;
+	font-weight: 700;
+}
+
+.graph__label {
+	position: absolute;
+	top: -74px;
+	left: 15px;
+
+	width: 90px;
+	//height: 50px;
+
+	padding: 5px 10px;
+
+	background-color: white;
+
+	border:1px solid black;
+	border-radius: 5px;
+}
+
+.graph__temp {
+	display: block;
+}
+
+.graph__hr {
+	display: block;
+}
+
+.graph__point:hover .graph__inner {
+	display: block;
+}
