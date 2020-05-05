@@ -52,10 +52,10 @@
 
 .graph__label {
 	position: absolute;
-	top: -74px;
-	left: 15px;
+	top: -81px;
+	left: -81px;
 
-	width: 90px;
+	width: 270px;
 	//height: 50px;
 
 	padding: 5px 10px;
