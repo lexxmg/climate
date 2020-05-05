@@ -49,5 +49,8 @@ $(function(){
 				left: map(temp, 12, 28, 120, 626) 
 			}
 		);
+
+		$.('.graph__temp').text('Темпиратура ' + temp + 'С');
+		$.('.graph__hr').text('Влахность' + Hr + '%');
 	});
 });
