@@ -50,7 +50,7 @@ $(function(){
 			}
 		);
 
-		$.('.graph__temp').text('Темпиратура ' + temp + 'С');
-		$.('.graph__hr').text('Влахность' + Hr + '%');
+		$('.graph__temp').text('Темпиратура: ' + temp + ' Сº');
+		$('.graph__hr').text('Влажность: ' + Hr + ' %');
 	});
 });
