@@ -13,8 +13,8 @@
 .graph {
 	position: relative;
 
-	width: 100%;
-	height: 500px;
+	width: 700px;
+	height: 700px;
 
 	margin-top: 50px;
 
@@ -22,12 +22,14 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
+
+	border: 1px solid black;
 }
 
 .graph__point {
 	position: absolute;
-	top: 100px;
-	left: 300px;
+	top: 0;
+	left: 0;
 
 	width: 10px;
 	height: 10px;
@@ -35,4 +37,43 @@
 	background-color: red;
 
 	border-radius: 50%
+}
+
+.graph__inner {
+	display: none;
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+
+	font-size: 22px;
+	font-weight: 700;
+}
+
+.graph__label {
+	position: absolute;
+	top: -81px;
+	left: -81px;
+
+	width: 270px;
+	//height: 50px;
+
+	padding: 5px 10px;
+
+	background-color: white;
+
+	border:1px solid black;
+	border-radius: 5px;
+}
+
+.graph__temp {
+	display: block;
+}
+
+.graph__hr {
+	display: block;
+}
+
+.graph__point:hover .graph__inner {
+	display: block;
 }
