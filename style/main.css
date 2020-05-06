@@ -2,9 +2,14 @@
 
 }
 
-.main__inner-temp {
+.main__bar-settings {
 	display: none;
 
+	padding: 5px 10px;
+}
+
+
+.main__inner-temp {
 	padding: 5px 10px;
 }
 
@@ -17,6 +22,10 @@
 }
 
 .main__container {
+
+}
+
+.main__form-container {
 
 }
 
@@ -97,8 +106,23 @@
 }
 
 @media(max-width: 730px) {
-	.main__inner-temp {
-		display: block;
+	.main__form-container {
+		display: none;
+	}
+
+	.main__bar-settings {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 50;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 100%;
+
+		background-color: white;
 	}
 
 	.main__container-graph {

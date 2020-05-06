@@ -3,10 +3,14 @@ $(function(){
 				graph = $('.main__graph'),
 				point = $('.graph__point'),
 				form = $('.form'),
-				tempContainer = $('.main__inner-temp');
+				btnSet = $('.main-bar__btn'),
+				tempContainer = $('.main__bar-settings'),
+				graphContainer = $('.main__container-graph');
+
 
 	let graphWidth = graph.outerWidth(),
-			graphHeight = graph.outerHeight();
+			graphHeight = graph.outerHeight(),
+			barHeight = tempContainer.outerHeight();
 			
 	var	temp = 0,
 			Hr = 0,
@@ -15,6 +19,11 @@ $(function(){
 	
 	console.log(temp);
 	console.log(Hr);
+
+	if($(window).width() <= 730) {
+		graphContainer.css('margin-top', barHeight);
+		form.css('margin-top', barHeight);
+	}
 
 	function map(x, in_min, in_max, out_min, out_max){
   	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -86,16 +95,32 @@ $(function(){
 			});
 	});
 
-	const top = tempContainer.offset().top;
-	$('.main__container-graph').animate({'scrollLeft': 260}, 700);
 
-	body.animate({'scrollTop': top}, 700);
+	graphContainer.animate({'scrollLeft': 260}, 350);
 
-	
 
-	body.on('click',function(){
+	btnSet.on('click', function(){
+		if($(this).attr('aria-expanded') == 'false'){
+			body.animate({'scrollTop': 0}, 350);
+			$('.main__form-container').slideDown('700', function(){
+				btnSet.attr('aria-expanded', 'true');
+				body.addClass('off-scroll');
+				graphContainer.addClass('off-scroll');
+			});
+		} else {
+			$('.main__form-container').slideUp('700', function(){
+				btnSet.attr('aria-expanded', 'false');
+				body.removeClass('off-scroll');
+				graphContainer.removeClass('off-scroll');
+				graphContainer.animate({'scrollLeft': 260}, 350);
+			});
+		}
+	});
+
+	body.on('click',function(target){
 		//$('.modal').remove();
 		popup('close');
+		//console.log(target);
 	});
 	
 	function popup(text){

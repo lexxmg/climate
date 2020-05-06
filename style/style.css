@@ -68,7 +68,7 @@ h1, h2, h3, p, figure {
 }
 
 .off-scroll {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 /*============================================================*/
