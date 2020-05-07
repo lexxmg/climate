@@ -7,10 +7,26 @@
 
 		<link rel="stylesheet" href="style/style.css">
 		<link rel="stylesheet" href="style/main.css">
+		<link rel="stylesheet" href="style/form.css">
+		<link rel="stylesheet" href="style/btn.css">
 	</head>
 	<body>
 		<main class="main">
 			<div class="main__container fixed-container">
+				<form class="main__form form">
+					<div class="form__inner"> 
+						<label class="form__label">Вкл/Откл
+							<input class="form__input" type="checkbox" name="">
+						</label>
+
+						<label class="form__label">Желаемая влажность:
+							<input class="form__input" type="text" name="">
+						</label>
+					</div>
+					
+					<button class="form__btn btn">применить</button>	
+				</form>
+				
 				<div class="main__graph graph">
 					<div class="graph__point">
 						<div class="graph__inner">
