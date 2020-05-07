@@ -1,6 +1,7 @@
 $(function(){
 	const graph = $('.main__graph'),
-				point = $('.graph__point');
+				point = $('.graph__point'),
+				form = $('.form');
 
 	let graphWidth = graph.outerWidth(),
 			graphHeight = graph.outerHeight();
@@ -53,4 +54,28 @@ $(function(){
 		$('.graph__temp').text('Темпиратура: ' + temp + ' Сº');
 		$('.graph__hr').text('Влажность: ' + Hr + ' %');
 	});
+
+	$.get(form.attr('action'), function(data){
+		const val = JSON.parse(data);
+
+		//console.log(val.check);
+		if(val.check == 'on'){
+			$('.form__input--checkbox').prop('checked', true);
+		} else {
+			$('.form__input--checkbox').prop('checked', false);
+		}
+			
+		$('.form__input--text').val(val.hr);
+	});
+
+	form.on('submit', function(evetn){
+		event.preventDefault();
+		//console.log($(this).serialize());
+		$.get($(this).attr('action'), 
+					$(this).serialize(), 
+					function(data){
+						console.log(JSON.parse(data));
+					});
+	});
+	
 });

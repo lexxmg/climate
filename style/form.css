@@ -4,21 +4,42 @@
 
 .form {
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 
-	padding: 10px;
+	padding: 10px 0;
 }
 
 .form__inner {
-
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .form__label {
+	display: flex;
+	align-items: center;
+
 	margin-right: 40px;
 }
 
 .form__input {
 	margin-left: 5px;
+}
+
+.form__input--checkbox {
+
+}
+
+.form__input--text {
+	width: 30px;
+	height: 30px;
+
+	padding: 0;
+
+	font-size: 20px;
+	text-align: center;
 }
 
 .form__btn {
