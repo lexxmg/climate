@@ -1,0 +1,17 @@
+.btn {
+	width: 200px;
+	height: 40px;
+
+	background: none;
+
+	border: 1px solid blue;
+
+	font-size: 15px;
+	color: blue;
+}
+
+.btn:hover {
+	border-color: red;
+
+	color: red;
+}

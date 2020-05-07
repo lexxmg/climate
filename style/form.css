@@ -1,0 +1,26 @@
+.main__form {
+
+}
+
+.form {
+	display: flex;
+	justify-content: space-between;
+
+	padding: 10px;
+}
+
+.form__inner {
+
+}
+
+.form__label {
+	margin-right: 40px;
+}
+
+.form__input {
+	margin-left: 5px;
+}
+
+.form__btn {
+	
+}
