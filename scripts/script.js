@@ -58,19 +58,19 @@ $(function(){
 	$.get(form.attr('action'), function(data){
 		const val = JSON.parse(data);
 
-		//console.log(val.check);
+		//console.log(val);
 		if(val.check == 'on'){
 			$('.form__input--checkbox').prop('checked', true);
 		} else {
 			$('.form__input--checkbox').prop('checked', false);
 		}
-			
+		$('.select').val(val.out);
 		$('.form__input--text').val(val.hr);
 	});
 
 	form.on('submit', function(evetn){
 		event.preventDefault();
-		//console.log($(this).serialize());
+		console.log($(this).serialize());
 		$.get($(this).attr('action'), 
 					$(this).serialize(), 
 					function(data){
