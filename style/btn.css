@@ -2,16 +2,18 @@
 	width: 200px;
 	height: 40px;
 
-	background: none;
+	background-color: transparent;
 
 	border: 1px solid blue;
 
 	font-size: 15px;
 	color: blue;
+
+	transition: background-color .25s, color .25s;
 }
 
 .btn:hover {
-	border-color: red;
+	background-color: blue;
 
-	color: red;
+	color: white;
 }

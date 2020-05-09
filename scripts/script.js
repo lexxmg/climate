@@ -1,5 +1,6 @@
 $(function(){
-	const graph = $('.main__graph'),
+	const body = $('html, body'), 
+				graph = $('.main__graph'),
 				point = $('.graph__point'),
 				form = $('.form');
 
@@ -72,10 +73,35 @@ $(function(){
 		event.preventDefault();
 		console.log($(this).serialize());
 		$.get($(this).attr('action'), 
-					$(this).serialize(), 
-					function(data){
-						console.log(JSON.parse(data));
-					});
+					$(this).serialize() 
+			).done(function(){
+				popup('Данные отправлены');
+				setTimeout(popup, 3000, 'close');
+			})
+			.fail(function(){
+				popup('Ошибка сервера');
+				$('.modal__popup').addClass('modal__popup--err');
+				setTimeout(popup, 10000, 'close');
+			});
+	});
+
+	body.on('click',function(){
+		//$('.modal').remove();
+		popup('close');
 	});
 	
+	function popup(text){
+		body.prepend(
+			`<dev class="modal">
+			 	<div class="modal__popup">
+					<span class="modal__text">${text}</span>
+				</div>
+			 </dev>`
+		);
+
+		if(text == 'close'){
+			$('.modal').remove();
+		}
+	}
+
 });
