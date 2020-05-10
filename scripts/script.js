@@ -26,7 +26,7 @@ $(function(){
 		}
 	);
 	
-	$.get('http://192.168.0.15/charts/log-out.php', function(data){
+	$.get('http://192.168.0.15/charts2/log-out.php', function(data){
 		
 		let arr = $(data).text().replace(/\n/g, '').replace(/dat/g, "\"dat\"")
 																							  .replace(/temp/g, "\"temp\"")
