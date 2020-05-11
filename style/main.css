@@ -6,8 +6,12 @@
 
 }
 
+.main__container-graph {
+	overflow: auto;
+}
+
 .main__graph {
-	
+	margin-top: 50px;
 }
 
 .graph {
@@ -15,8 +19,6 @@
 
 	width: 700px;
 	height: 700px;
-
-	margin-top: 50px;
 
 	background-image: url(../img/unnamed.gif);
 	background-repeat: no-repeat;
@@ -76,4 +78,10 @@
 
 .graph__point:hover .graph__inner {
 	display: block;
+}
+
+@media(max-width: 730px) {
+	.main__graph {
+		margin-top: 20px;
+	}
 }

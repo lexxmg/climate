@@ -24,6 +24,11 @@
 	margin-right: 40px;
 }
 
+.form__label:last-child {
+	margin: 0;
+}
+
+
 .form__input {
 	margin-left: 5px;
 }
@@ -55,4 +60,34 @@
 }
 .form__btn {
 	
+}
+
+@media (max-width: 730px) {
+	.form {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	
+		padding: 10px 0;
+	}
+
+	.form__inner {
+		padding: 0 10px;
+		margin-bottom: 20px;
+
+		min-width: 100%;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	.form__label {
+		margin-right: 20px;
+	} 
+}
+
+@media (max-width: 432px) {
+	.form__label:last-child {
+		margin-top: 20px;
+	}
 }
