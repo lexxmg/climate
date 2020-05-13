@@ -85,6 +85,14 @@ $(function(){
 			});
 	});
 
+	const top = $('.main__container-graph').offset().top;
+	console.log(top);
+
+	$('.main__container-graph').scrollLeft(260);
+	body.scrollTop(top);
+
+	
+
 	body.on('click',function(){
 		//$('.modal').remove();
 		popup('close');
