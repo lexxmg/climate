@@ -37,14 +37,24 @@
 					
 					<button class="form__btn btn">применить</button>	
 				</form>
+
+				<div class="main__inner-temp temp-display">
+					t<span class="temp-display__item js-hr"></span>
+					Hr<span class="temp-display__item js-temp"></span>
+				</div>
 				
 				<div class="main__container-graph">
 					<div class="main__graph graph">
 						<div class="graph__point">
 							<div class="graph__inner">
 								<div class="graph__label">
-									<span class="graph__temp">22 Cº</span>
-									<span class="graph__hr">40 %</span>
+									<span class="graph__text-container">
+										Темпиратура:<span class="graph__text js-temp"></span>
+									</span>
+									
+									<span graph__text-container>
+										Влажность:<span class="graph__text js-hr"></span>
+									</span>
 								</div>
 							</div>
 						</div>

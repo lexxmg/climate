@@ -2,7 +2,8 @@ $(function(){
 	const body = $('html, body'), 
 				graph = $('.main__graph'),
 				point = $('.graph__point'),
-				form = $('.form');
+				form = $('.form'),
+				tempContainer = $('.main__inner-temp');
 
 	let graphWidth = graph.outerWidth(),
 			graphHeight = graph.outerHeight();
@@ -52,8 +53,8 @@ $(function(){
 			}
 		);
 
-		$('.graph__temp').text('Темпиратура: ' + temp + ' Сº');
-		$('.graph__hr').text('Влажность: ' + Hr + ' %');
+		$('.js-hr').text(' ' + temp + ' Сº');
+		$('.js-temp').text(' ' + Hr + ' %');
 	});
 
 	$.get(form.attr('action'), function(data){
@@ -85,11 +86,10 @@ $(function(){
 			});
 	});
 
-	const top = $('.main__container-graph').offset().top;
-	console.log(top);
+	const top = tempContainer.offset().top;
+	$('.main__container-graph').animate({'scrollLeft': 260}, 700);
 
-	$('.main__container-graph').scrollLeft(260);
-	body.scrollTop(top);
+	body.animate({'scrollTop': top}, 700);
 
 	
 

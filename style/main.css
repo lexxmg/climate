@@ -2,16 +2,32 @@
 
 }
 
+.main__inner-temp {
+	display: none;
+
+	padding: 5px 10px;
+}
+
+.temp-display {
+
+}
+
+.temp-display__item {
+	margin: 0 20px 0 3px;
+}
+
 .main__container {
 
 }
 
 .main__container-graph {
 	overflow: auto;
+
+	margin-top: 50px;
 }
 
 .main__graph {
-	margin-top: 50px;
+	
 }
 
 .graph {
@@ -68,12 +84,12 @@
 	border-radius: 5px;
 }
 
-.graph__temp {
+.graph__text-container {
 	display: block;
 }
 
-.graph__hr {
-	display: block;
+.graph__text {
+	
 }
 
 .graph__point:hover .graph__inner {
@@ -81,7 +97,11 @@
 }
 
 @media(max-width: 730px) {
-	.main__graph {
-		margin-top: 20px;
+	.main__inner-temp {
+		display: block;
+	}
+
+	.main__container-graph {
+		margin: 0;
 	}
 }
