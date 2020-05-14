@@ -7,7 +7,6 @@ $(function(){
 				tempContainer = $('.main__bar-settings'),
 				graphContainer = $('.main__container-graph');
 
-
 	let graphWidth = graph.outerWidth(),
 			graphHeight = graph.outerHeight(),
 			barHeight = tempContainer.outerHeight();
@@ -95,9 +94,7 @@ $(function(){
 			});
 	});
 
-
 	graphContainer.animate({'scrollLeft': 260}, 350);
-
 
 	btnSet.on('click', function(){
 		if($(this).attr('aria-expanded') == 'false'){
