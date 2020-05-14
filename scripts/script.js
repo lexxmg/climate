@@ -1,10 +1,15 @@
 $(function(){
-	const graph = $('.main__graph'),
+	const body = $('html, body'), 
+				graph = $('.main__graph'),
 				point = $('.graph__point'),
-				form = $('.form');
+				form = $('.form'),
+				btnSet = $('.main-bar__btn'),
+				tempContainer = $('.main__bar-settings'),
+				graphContainer = $('.main__container-graph');
 
 	let graphWidth = graph.outerWidth(),
-			graphHeight = graph.outerHeight();
+			graphHeight = graph.outerHeight(),
+			barHeight = tempContainer.outerHeight();
 			
 	var	temp = 0,
 			Hr = 0,
@@ -13,6 +18,11 @@ $(function(){
 	
 	console.log(temp);
 	console.log(Hr);
+
+	if($(window).width() <= 730) {
+		graphContainer.css('margin-top', barHeight);
+		form.css('margin-top', barHeight);
+	}
 
 	function map(x, in_min, in_max, out_min, out_max){
   	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -25,7 +35,7 @@ $(function(){
 		}
 	);
 	
-	$.get('http://192.168.0.15/charts/log-out.php', function(data){
+	$.get('http://192.168.0.15/charts2/log-out.php', function(data){
 		
 		let arr = $(data).text().replace(/\n/g, '').replace(/dat/g, "\"dat\"")
 																							  .replace(/temp/g, "\"temp\"")
@@ -51,8 +61,8 @@ $(function(){
 			}
 		);
 
-		$('.graph__temp').text('Темпиратура: ' + temp + ' Сº');
-		$('.graph__hr').text('Влажность: ' + Hr + ' %');
+		$('.js-hr').text(' ' + temp + ' Сº');
+		$('.js-temp').text(' ' + Hr + ' %');
 	});
 
 	$.get(form.attr('action'), function(data){
@@ -72,10 +82,56 @@ $(function(){
 		event.preventDefault();
 		console.log($(this).serialize());
 		$.get($(this).attr('action'), 
-					$(this).serialize(), 
-					function(data){
-						console.log(JSON.parse(data));
-					});
+					$(this).serialize() 
+			).done(function(){
+				popup('Данные отправлены');
+				setTimeout(popup, 3000, 'close');
+			})
+			.fail(function(){
+				popup('Ошибка сервера');
+				$('.modal__popup').addClass('modal__popup--err');
+				setTimeout(popup, 10000, 'close');
+			});
+	});
+
+	graphContainer.animate({'scrollLeft': 260}, 350);
+
+	btnSet.on('click', function(){
+		if($(this).attr('aria-expanded') == 'false'){
+			body.animate({'scrollTop': 0}, 350);
+			$('.main__form-container').slideDown('700', function(){
+				btnSet.attr('aria-expanded', 'true');
+				body.addClass('off-scroll');
+				graphContainer.addClass('off-scroll');
+			});
+		} else {
+			$('.main__form-container').slideUp('700', function(){
+				btnSet.attr('aria-expanded', 'false');
+				body.removeClass('off-scroll');
+				graphContainer.removeClass('off-scroll');
+				graphContainer.animate({'scrollLeft': 260}, 350);
+			});
+		}
+	});
+
+	body.on('click',function(target){
+		//$('.modal').remove();
+		popup('close');
+		//console.log(target);
 	});
 	
+	function popup(text){
+		body.prepend(
+			`<dev class="modal">
+			 	<div class="modal__popup">
+					<span class="modal__text">${text}</span>
+				</div>
+			 </dev>`
+		);
+
+		if(text == 'close'){
+			$('.modal').remove();
+		}
+	}
+
 });

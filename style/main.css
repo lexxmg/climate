@@ -2,8 +2,36 @@
 
 }
 
+.main__bar-settings {
+	display: none;
+
+	padding: 5px 10px;
+}
+
+.main__inner-temp {
+	padding: 5px 10px;
+}
+
+.temp-display {
+
+}
+
+.temp-display__item {
+	margin: 0 20px 0 3px;
+}
+
 .main__container {
 
+}
+
+.main__form-container {
+
+}
+
+.main__container-graph {
+	overflow: auto;
+
+	margin-top: 50px;
 }
 
 .main__graph {
@@ -15,8 +43,6 @@
 
 	width: 700px;
 	height: 700px;
-
-	margin-top: 50px;
 
 	background-image: url(../img/unnamed.gif);
 	background-repeat: no-repeat;
@@ -56,7 +82,7 @@
 	left: -81px;
 
 	width: 270px;
-	//height: 50px;
+	/*height: 50px;*/
 
 	padding: 5px 10px;
 
@@ -66,14 +92,39 @@
 	border-radius: 5px;
 }
 
-.graph__temp {
+.graph__text-container {
 	display: block;
 }
 
-.graph__hr {
-	display: block;
+.graph__text {
+	
 }
 
 .graph__point:hover .graph__inner {
 	display: block;
+}
+
+@media(max-width: 730px) {
+	.main__form-container {
+		display: none;
+	}
+
+	.main__bar-settings {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 50;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 100%;
+
+		background-color: white;
+	}
+
+	.main__container-graph {
+		margin: 0;
+	}
 }
