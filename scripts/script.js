@@ -35,18 +35,8 @@ $(function(){
 		}
 	);
 	
-	$.get('http://192.168.0.15/charts2/log-out.php', function(data){
-		
-		let arr = $(data).text().replace(/\n/g, '').replace(/dat/g, "\"dat\"")
-																							  .replace(/temp/g, "\"temp\"")
-																							  .replace(/ppm/g, "\"ppm\"")
-																							  .replace(/BMEt/g, "\"BMEt\"")
-																							  .replace(/BMEp/g, "\"BMEp\"")
-																							  .replace(/BMEh/g, "\"BMEh\"");
-		
- 		let Str = arr.substring(0, arr.length - 2) + ']';
-
-		ar = JSON.parse(Str);
+	$.get('http://192.168.0.15/charts2/logJson.php', function(data){
+		ar = JSON.parse(data);
 		temp = ar[ar.length - 1].BMEt;
 		Hr = ar[ar.length - 1].BMEh;
 
