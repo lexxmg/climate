@@ -35,7 +35,7 @@ $(function(){
 		}
 	);
 	
-	$.get('http://192.168.0.15/charts2/logJson.php', function(data){
+	$.get('../charts2/logJson.php', function(data){
 		ar = JSON.parse(data);
 		temp = ar[ar.length - 1].BMEt;
 		Hr = ar[ar.length - 1].BMEh;
